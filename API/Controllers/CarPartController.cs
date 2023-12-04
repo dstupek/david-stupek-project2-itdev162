@@ -105,5 +105,24 @@ namespace API.Controllers
 
         }
 
+        [HttpDelete("{id}", Name = "Delete")]
+        public ActionResult Delete(Guid id)
+        {
+            var carPart = context.CarParts.Find(id);
+            if (carPart == null)
+            {
+                return NotFound();
+            }
+
+            context.CarParts.Remove(carPart);
+            var success = context.SaveChanges() > 0;
+
+            if (success)
+            {
+                return NoContent();
+            }
+
+            throw new Exception("Error deleting car part");
+        }
     }
 }
