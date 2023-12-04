@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'client';
-  weatherForecasts: any;
+  title = 'Car Part Store';
+  CarParts: any;
 
   constructor(private http: HttpClient) {
 
   }
   ngOnInit(): void {
       //throw new Error('Method not implimented.')
-      this.http.get('http://localhost:5198/weatherforecast').subscribe(
-        response => { this.weatherForecasts = response; },
+      this.http.get('http://localhost:5198/api/CarPart').subscribe(
+        response => { this.CarParts = response; },
         error => { console.log(error)}
       );
   }
