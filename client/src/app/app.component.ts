@@ -15,10 +15,27 @@ export class AppComponent implements OnInit{
 
   }
   ngOnInit(): void {
-      //throw new Error('Method not implimented.')
+      //Load carparts to front end, throw error if unable
       this.http.get('http://localhost:5198/api/CarPart').subscribe(
         response => { this.CarParts = response; },
         error => { console.log(error)}
       );
   }
+  refreshCarParts(): void {
+    //refrshes carparts on frontend
+    this.http.get('http://localhost:5198/api/CarPart').subscribe(
+        response => { this.CarParts = response; },
+        error => { console.log(error)}
+      );
+  }
+  createCarPart(): void {
+    console.log("create Car Part")
+  }
+  deleteCarPart(): void {
+    console.log("delete Car Part")
+  }
+  updateCarPart(): void {
+    console.log("update Car Part")
+  }
+
 }

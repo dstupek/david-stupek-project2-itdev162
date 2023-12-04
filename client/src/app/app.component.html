@@ -1,10 +1,20 @@
 <h1>{{title}}</h1>
 
+
+
 <div *ngFor="let CarPart of CarParts">
     <mat-card class="post-card">
-    <mat-card-title>{{CarPart.Name}}</mat-card-title>
+    <mat-card-title>Car Part name = {{CarPart.Name}}</mat-card-title>
     <mat-card-content>
-        <p>{{CarPart.Description}}</p>
-        <p>{{CarPart.Price}}</p>
+        <p>Description = {{CarPart.Description}}</p>
+        <p>Price = {{CarPart.Price}}</p>
     </mat-card-content>
-    
+
+<!-- app.component.html -->
+
+<div>
+  <button (click)="createCarPart()">Create CarPart</button>
+  <button (click)="refreshCarParts()">Refresh CarParts</button>
+  <button (click)="updateCarPart()">Update CarPart</button>
+  <button (click)="deleteCarPart()">Delete CarPart</button>
+</div>
