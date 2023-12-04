@@ -29,15 +29,7 @@ namespace API.Controllers
             return this.context.CarParts.ToList();
         }
 
-        // <summary>
-        // 
-        // </summary>
-        // <param name="id"></param>
-        // <returns></returns> <summary>
-        // 
-        // </summary>
-        // <param name="id"></param>
-        // <returns></returns>
+        //Finds Carpart by ID
         [HttpGet("{id}", Name = "GetById")]
         public ActionResult<CarPart> GetById(Guid id)
         {
@@ -49,16 +41,7 @@ namespace API.Controllers
             return Ok(CarPart);
         }
 
-        // <summary>
-        // Creates a new Car Part
-        // </summary>
-        // <param name="request"></param>
-        // <returns></returns>
-        // <exception cref="Exception"></exception> <summary>
-        // 
-        // </summary>
-        // <param name="request"></param>
-        // <returns></returns>
+        // Creates a new car part 
         [HttpPost(Name = "Create")]
         public ActionResult<CarPart> Create([FromBody]CarPart request)
         {
@@ -81,6 +64,7 @@ namespace API.Controllers
             throw new Exception("Error creating car part");
         }
 
+        // Updates car part
         [HttpPut(Name = "Update")]
         public ActionResult<CarPart> Update([FromBody]CarPart request)
         {
@@ -105,6 +89,7 @@ namespace API.Controllers
 
         }
 
+        //Deletes car part
         [HttpDelete("{id}", Name = "Delete")]
         public ActionResult Delete(Guid id)
         {
