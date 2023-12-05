@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ViewCarPartComponent } from './view-car-part/view-car-part.component';
 import { CreateCarPartComponent } from './create-car-part/create-car-part.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
