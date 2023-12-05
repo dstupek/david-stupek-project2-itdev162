@@ -23,7 +23,6 @@ namespace API.Controllers
         //Get CarPart
         //<returns> A list of CarParts</returns>
         [HttpGet(Name = "GetCarParts")]
-       
         public ActionResult<List<CarPart>> Get()
         {
             return this.context.CarParts.ToList();

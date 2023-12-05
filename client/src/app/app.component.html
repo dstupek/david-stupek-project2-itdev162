@@ -1,20 +1,27 @@
-<h1>{{title}}</h1>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
 
-
-
-<div *ngFor="let CarPart of CarParts">
+<div *ngFor="let carPart of carParts">
     <mat-card class="post-card">
-    <mat-card-title>Car Part name = {{CarPart.Name}}</mat-card-title>
+    <mat-card-title>{{carPart.name}}</mat-card-title>
     <mat-card-content>
-        <p>Description = {{CarPart.Description}}</p>
-        <p>Price = {{CarPart.Price}}</p>
+        <p>{{carPart.description}}</p>
+        <p>${{carPart.price}}</p>
     </mat-card-content>
-
-<!-- app.component.html -->
-
-<div>
-  <button (click)="createCarPart()">Create CarPart</button>
-  <button (click)="refreshCarParts()">Refresh CarParts</button>
-  <button (click)="updateCarPart()">Update CarPart</button>
-  <button (click)="deleteCarPart()">Delete CarPart</button>
-</div>
+    <mat-card-actions>
+        <button mat-button (click)="createCarPart()">Create Car Part</button>
+        <button mat-button (click)="refreshCarPart()">Refresh Car Part</button>
+        <button mat-button (click)="updateCarPart()">Update Car Part</button>
+        <button mat-button (click)="deleteCarPart()">Delete Car Part</button>
+    </mat-card-actions>
