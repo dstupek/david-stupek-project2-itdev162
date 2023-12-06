@@ -1,13 +1,15 @@
 <div *ngFor="let carPart of carParts">
-    <mat-card class="post-card">
+    <mat-card class="post-card" routerLink="/carpart/{{carPart.id}}">
     <mat-card-title>{{carPart.name}}</mat-card-title>
     <mat-card-content>
         <p>{{carPart.description}}</p>
         <p>${{carPart.price}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button (click)="createCarPart()">Create Car Part</button>
+        <button mat-button routerLink="/create">Create Car Part</button>
         <button mat-button (click)="refreshCarPart()">Refresh Car Part</button>
         <button mat-button (click)="updateCarPart()">Update Car Part</button>
-        <button mat-button (click)="deleteCarPart()">Delete Car Part</button>
+        <button mat-button (click)="deleteCarPart(carPart.id)">Delete Car Part</button>
     </mat-card-actions>
+
+    
