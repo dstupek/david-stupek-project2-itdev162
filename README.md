@@ -1,3 +1,3 @@
-# david-stupek-project1-itdev162
+# david-stupek-project2-itdev162
 Project description! 
-https://docs.google.com/document/d/1jHbdGrjM4orAeUW6PVoVRoaIGD68OMiQkhxFhaUbLqo/edit?usp=sharing
+https://docs.google.com/document/d/1fO1-ZPnd--tlejPaiJLyrsVaZqTr1gBoWCjm5r9S4wk/edit?usp=sharing
