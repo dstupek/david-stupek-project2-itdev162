@@ -90,23 +90,33 @@ namespace API.Controllers
 
         //Deletes car part
         [HttpDelete("{id}", Name = "Delete")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(Guid id) 
         {
-            var carPart = context.CarParts.Find(id);
-            if (carPart == null)
-            {
-                return NotFound();
+             try
+             {
+                 var carPart = context.CarParts.Find(id);
+                 if (carPart == null)
+                     {
+                        return NotFound();
+                     }
+
+               context.CarParts.Remove(carPart);
+                 var success = context.SaveChanges() > 0;
+
+                   if (success)
+                    {
+                       return NoContent();
+                    }
+
+                      throw new Exception("Error deleting car part");
             }
-
-            context.CarParts.Remove(carPart);
-            var success = context.SaveChanges() > 0;
-
-            if (success)
+            catch (Exception ex)
             {
-                return NoContent();
-            }
-
-            throw new Exception("Error deleting car part");
+            // Log the exception
+            Console.WriteLine(ex.Message);
+            return StatusCode(500, "Internal server error");
+             }
         }
+        
     }
 }

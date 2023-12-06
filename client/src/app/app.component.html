@@ -1,10 +1,13 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
     </button>
     <span>{{title}}</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button mat-icon-button class="example-icon" routerLink="/create" aria-label="Example icon-button with plus">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="/create" aria-label="Example icon-button with heart icon">
       <mat-icon>favorite</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
@@ -12,16 +15,6 @@
     </button>
   </mat-toolbar>
 
-<div *ngFor="let carPart of carParts">
-    <mat-card class="post-card">
-    <mat-card-title>{{carPart.name}}</mat-card-title>
-    <mat-card-content>
-        <p>{{carPart.description}}</p>
-        <p>${{carPart.price}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button (click)="createCarPart()">Create Car Part</button>
-        <button mat-button (click)="refreshCarPart()">Refresh Car Part</button>
-        <button mat-button (click)="updateCarPart()">Update Car Part</button>
-        <button mat-button (click)="deleteCarPart()">Delete Car Part</button>
-    </mat-card-actions>
+<div>
+  <router-outlet></router-outlet>
+</div>
